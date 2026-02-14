@@ -1,0 +1,35 @@
+# Environment
+.env
+.env.*
+!.env.example
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build outputs
+dist/
+build/
+out/
+bin/
+
+# Dependencies
+node_modules/
+vendor/
+
+# Test outputs
+coverage/
+test-results/
+playwright-report/
+
+# Claude local overrides
+CLAUDE.local.md
+
+# Logs
+*.log

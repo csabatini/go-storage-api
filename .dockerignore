@@ -1,0 +1,16 @@
+.env
+.env.*
+!.env.example
+.git/
+.gitignore
+node_modules/
+vendor/
+dist/
+build/
+coverage/
+test-results/
+playwright-report/
+*.md
+.claude/
+.vscode/
+.idea/
