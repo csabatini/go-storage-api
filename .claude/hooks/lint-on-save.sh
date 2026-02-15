@@ -36,6 +36,12 @@ case "$EXTENSION" in
             flake8 "$FILE_PATH" 2>&1 | head -20
         fi
         ;;
+    go)
+        # Go — run go-critic check on all packages
+        if command -v go-critic &> /dev/null; then
+            go-critic check ./... 2>&1 | head -20
+        fi
+        ;;
 esac
 
 exit 0
