@@ -88,6 +88,19 @@ func TestRequestID_Uniqueness(t *testing.T) {
 	}
 }
 
+func TestNewUUIDv4_Format(t *testing.T) {
+	for i := 0; i < 50; i++ {
+		id := newUUIDv4()
+
+		if len(id) != 36 {
+			t.Errorf("iteration %d: expected length 36, got %d for %q", i, len(id), id)
+		}
+		if !uuidV4Re.MatchString(id) {
+			t.Errorf("iteration %d: %q does not match UUID v4 pattern %s", i, id, uuidV4Re.String())
+		}
+	}
+}
+
 func TestRequestIDFromContext_EmptyContext(t *testing.T) {
 	req := httptest.NewRequest(http.MethodGet, "/", nil)
 	id := RequestIDFromContext(req.Context())
